@@ -28,11 +28,12 @@ public class spongebob {
 		
 		button.addActionListener(new ActionListener()
         {
+			JTextArea response = new JTextArea("");
             public void actionPerformed(ActionEvent ae)
             {
             	String user_input_string = user_input.getText();
             	user_input_string = spongebobText(user_input_string);
-            	JTextArea response = new JTextArea(user_input_string);
+            	response.setText(user_input_string);
             	panel.add(response);
             	frame.add(panel);
             	frame.show();
