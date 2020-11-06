@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -21,7 +20,7 @@ public class spongebob {
 		
 		JPanel panel = new JPanel();
 		
-		JLabel title = new JLabel("Put the words in that you want to be put into Spongebob meme text:");
+		JLabel title = new JLabel("Put the words in spongebob meme text:");
 		JTextArea user_input = new JTextArea(5, 40);
 		
 		JButton button = new JButton("Compile");
@@ -29,12 +28,13 @@ public class spongebob {
 		button.addActionListener(new ActionListener()
         {
 			JTextArea response = new JTextArea("");
+        	JScrollPane jpane = new JScrollPane(response);
             public void actionPerformed(ActionEvent ae)
             {
             	String user_input_string = user_input.getText();
             	user_input_string = spongebobText(user_input_string);
             	response.setText(user_input_string);
-            	panel.add(response);
+            	panel.add(jpane);
             	frame.add(panel);
             	frame.show();
             }
